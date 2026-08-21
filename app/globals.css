@@ -18,7 +18,7 @@ a {
 }
 
 .row {
-  /* max-width: 1200px; */
+  max-width: 1500px;
   width: 100%;
   margin: 0 auto;
   padding: 0 20px;
@@ -117,16 +117,226 @@ a {
 
 /* TESTING */
 
+.testing__row{
+  
+}
+.testing__wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
 .demographics__input{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-bottom: 1px solid;
+  width: 500px;
+  position: absolute;
+}
+.input__title{
+  font-size: 14px;
+  font-weight: 400;
 }
 .demographics__input--text{
   text-align: center;
+  font-size: 60px;
 }
 .demographics__input--text:focus{
   outline: none;
   box-shadow: none;
+}
+.rombuses__img{
+  height: 600px;
+}
+
+/* RESULTS */
+
+.results__wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.results__rombuses{
+  margin-right: 100px;
+}
+.results__rombuses__img{
+  width: 500px;
+  height: 500px;
+}
+.camera__img,
+.camera__text,
+.gallery__img,
+.gallery__text{
+  position: absolute;
+}
+.camera__img{
+  left: 315px;
+  top: 190px;
+  transition: 500ms ease;
+}
+.camera__img:hover{
+  transform: scale(1.1);
+}
+.camera__text{
+  left: 430px;
+  top: 148px;
+}
+.gallery__img{
+  right: 410px;
+  top: 190px;
+  transition: 500ms ease;
+}
+.gallery__img:hover{
+  transform: scale(1.1);
+}
+.gallery__text{
+  right: 519px;
+  top: 300px;
+}
+
+/* SELECT */
+
+.select__wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.select__title{
+  font-weight: bold;
+}
+.select__rombuses--img{
+  width: 700px;
+}
+.dem__btn, 
+.cosmetic__btn,
+.weather__btn,
+.skin__btn{
+  position: absolute;
+}
+.dem__btn{
+  cursor: pointer;
+  transition: 300ms ease;
+}
+.dem__btn:hover{
+  transform: scale(1.05)
+}
+.dem__btn{
+  top: 127px;
+}
+.weather__btn{
+  top: 353px;
+}
+.skin__btn{
+  left: 507px;
+}
+.cosmetic__btn{
+  right: 507px;
+}
+.page__buttons{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3%;
+}
+.page__buttons--text{
+  color: gray;
+  font-size: 14px;
+}
+
+/* DEMOGRAPHICS */
+
+.demographics__text{
+  margin-bottom: 3%;
+  line-height: 1;
+  margin-left: 0;
+}
+.demographics__title{
+  font-size: 64px;
+}
+.demographics__subtitle{
+
+}
+.demographics__wrapper{
+  width: 100%;
+  display: flex;
+  gap: 1em;
+}
+.categories{
+  width: 15%;
+}
+.race,
+.age,
+.sex{
+  height: 80px;
+  width: 100%;
+  background-color: rgb(242, 242, 255);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 15px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  border-top: solid black 1px;
+  cursor: pointer;
+}
+.display{
+  height: 450px;
+  width: 65%;
+  background-color: rgb(242, 242, 255);
+  border-top: solid black 1px;
+  
+}
+.display__title{
+  font-size: 42px;
+  padding: 10px 20px;
+}
+.content{
+  width: 20%;
+  height: 100%;
+  background-color: rgb(242, 242, 255);
+  border-top: solid black 1px;
+}
+.content__title{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 18px;
+}
+.races__btns{
+  display: flex;
+  flex-direction: column;
+}
+.races__btn{
+  display: flex;
+  padding: 10px;
+}
+.races{
+  text-align: left;
+  font-size: 18px;
+  padding-left: 10px
+}
+.proceed__btns{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5em;
+}
+.reset__btn{
+  font-size: 12px;
+  padding: 5px;
+  height: 28px;
+  width: 60px;
+  border: 2px solid black;
+}
+.confirm__btn{
+  font-size: 12px;
+  padding: 5px;
+  height: 28px;
+  width: 72px;
+  background-color: black;
+  color: white;
 }
