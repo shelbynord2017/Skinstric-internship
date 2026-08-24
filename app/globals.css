@@ -274,21 +274,56 @@ a {
   width: 100%;
   background-color: rgb(242, 242, 255);
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
-  padding-left: 15px;
+  text-align: left;
+  padding-left: 10px;
   margin-bottom: 8px;
   font-size: 16px;
   font-weight: bold;
   border-top: solid black 1px;
   cursor: pointer;
 }
+.select__btn{
+  transition: 300ms ease;
+}
+.select__btn:hover{
+  background-color: rgb(217, 228, 238);
+}
+.select__btn.selected{
+  background-color: #242424;
+  color: #fff;
+}
+.option__btn:not(:focus-within):hover{
+  background-color: rgb(217, 228, 238);
+}
+.option__btn:focus-within{
+  background-color: #242424;
+  color: #fff;
+}
+.option__btn input[type="radio"]{
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #777;
+  transform: rotate(45deg);
+  background-color: rgb(242, 242, 255);
+  cursor: pointer;
+  margin-top: 7px;
+  margin-right: 5px;
+}
+.options__btn input[type="radio"]:checked{
+  background-color: white;
+  /* border-color: #fff; */
+}
+.category__option{
+  margin-top: 5px;
+}
 .display{
   height: 450px;
   width: 65%;
   background-color: rgb(242, 242, 255);
   border-top: solid black 1px;
-  
 }
 .display__title{
   font-size: 42px;
@@ -306,15 +341,26 @@ a {
   padding: 10px;
   font-size: 18px;
 }
-.races__btns{
+.races__btns,
+.ages__btns,
+.sex__btns {
   display: flex;
   flex-direction: column;
 }
-.races__btn{
+.races__btn,
+.ages__btn,
+.sex__btn {
   display: flex;
   padding: 10px;
 }
-.races{
+.radio__btn{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.races,
+.ages,
+.sexes {
   text-align: left;
   font-size: 18px;
   padding-left: 10px
@@ -339,4 +385,165 @@ a {
   width: 72px;
   background-color: black;
   color: white;
+}
+.percentage__ring{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15px;
+}
+.percentage__ring--outer{
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.percentage__ring--inner{
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CAMERA MODAL */
+
+.modal__wrapper{
+  /* height: 100px;
+  width: 250px; */
+  display: flex;
+  flex-direction: column;
+}
+.upper__modal,
+.lower__modal{
+  background-color: #242424;
+  color: #fff;
+}
+.upper__modal{
+  border-bottom: solid 1px white;
+  height: 75px;
+  width: 275px;
+}
+.lower__modal{
+  display: flex;
+  justify-content: flex-end;
+  height: 30px;
+  width: 275px;
+}
+.modal__btn{
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.modal__text{
+  font-size: 12px;
+  padding: 8px;
+}
+.modal__text--btn{
+  font-size: 10px;
+  letter-spacing: 1.05;
+}
+
+/* LOADING PAGES */
+
+.loading__wrapper{
+  display: flex;
+  flex-direction: column;
+}
+.loading__upper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.loading__analysis--text{
+  position: absolute;
+}
+.loading__camera--text{
+  position: absolute;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;  
+}
+.picture__guidelines{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.picture__guidelines--title{
+  margin-bottom: 20px;
+}
+.picture__bullets{
+  display: flex;
+}
+.picture__bullet{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+.bullet__text{
+  font-size: 12px;
+}
+.bullet{
+  height: 12px;
+  width: 12px;
+  margin-right: 5px;
+}
+
+/* CAMERA CAPTURE */
+
+.selfie__row{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.upper__section{
+  min-height: 450px;
+  /* max-height: 500px; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px;
+  /* position: absolute; */
+}
+.lower__section{
+  margin-top: auto;
+  /* margin-top: 800px; */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  color: white;
+  bottom: 10px;
+}
+.camera__container{
+  position: relative;
+  width: 100%;
+  max-height: 600px; 
+  aspect-ratio: 3/4; 
+  /* background: #000; */
+  overflow: hidden;
+} 
+.video__screen{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.selfie__camera--wrapper{
+  position: absolute;
+  z-index: 1;
+  margin-right: 5px;
+}
+.take__pic{
+  margin-right: 10px;
+}
+.backIconWhite{
+  height: 50px;
+  margin-left: 10px;
 }

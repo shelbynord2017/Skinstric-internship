@@ -8,10 +8,18 @@ import gallery from '../../assets/gallery.png'
 import galleryText from '../../assets/gallery-text.png'
 import backButton from '../../assets/back-btn.png'
 import { useRouter } from 'next/navigation';
+import CameraModal from '../components/CameraModal'
+import LoadingAnalysis from '../components/LoadingAnalysis'
+import LoadingCamera from '../components/LoadingCamera'
 
 export default function page() {
     const [image, setImage] = useState<File | null>(null);
     const router = useRouter();
+    const [loadingCamera, setLoadingCamera] = useState(true)
+    const [isOpen, setIsOpen] = useState(false);
+
+    const openModal = () => setIsOpen(true);
+    const closeModal = () => setIsOpen(false);
 
     const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
@@ -68,14 +76,21 @@ export default function page() {
     <div className='container'>
         <div className="row results__row">
             <p>TO START ANALYSIS</p>
+            {/* <LoadingAnalysis/> */}
+            {/* <LoadingCamera/> */}
             <div className="results__wrapper">
                 <div className="results__rombuses">
                     <img src={rombuses.src} className="results__rombuses__img" alt="" />
                 </div>
-                <div className="camera">
+                <button 
+                onClick={openModal}
+                className="camera">
                     <img src={camera.src} className="camera__img" alt="" />
                     <img src={cameraText.src} className="camera__text" alt="" />
-                </div>
+                </button>
+                {isOpen && (
+                    <CameraModal closeModal={closeModal} />
+                )}
                 <div className="results__rombuses">
                     <img src={rombuses.src} className="results__rombuses__img" alt="" />
                 </div>
@@ -100,3 +115,6 @@ export default function page() {
     </div>
   )
 }
+
+
+
