@@ -18,7 +18,7 @@ a {
 }
 
 .row {
-  max-width: 1500px;
+  max-width: 1800px;
   width: 100%;
   margin: 0 auto;
   padding: 0 20px;
@@ -225,7 +225,7 @@ a {
   transform: scale(1.05)
 }
 .dem__btn{
-  top: 127px;
+  top: 120px;
 }
 .weather__btn{
   top: 353px;
@@ -248,6 +248,9 @@ a {
 
 /* DEMOGRAPHICS */
 
+.demographics__row{
+  width: 100%;
+}
 .demographics__text{
   margin-bottom: 3%;
   line-height: 1;
@@ -256,13 +259,10 @@ a {
 .demographics__title{
   font-size: 64px;
 }
-.demographics__subtitle{
-
-}
 .demographics__wrapper{
   width: 100%;
   display: flex;
-  gap: 1em;
+  gap: .5em;
 }
 .categories{
   width: 15%;
@@ -314,7 +314,6 @@ a {
 }
 .options__btn input[type="radio"]:checked{
   background-color: white;
-  /* border-color: #fff; */
 }
 .category__option{
   margin-top: 5px;
@@ -332,6 +331,7 @@ a {
 .content{
   width: 20%;
   height: 100%;
+  min-height: 450px;
   background-color: rgb(242, 242, 255);
   border-top: solid black 1px;
 }
@@ -346,6 +346,7 @@ a {
 .sex__btns {
   display: flex;
   flex-direction: column;
+  
 }
 .races__btn,
 .ages__btn,
@@ -640,6 +641,52 @@ a {
 .cosmetic__btn{
   right: 385px;
 }
+
+
+/* DEMOGRAPHICS */
+
+.demographics__title{
+  font-size: 42px;
+}
+.select__btn,
+.category__option--text{
+  font-size: 14px;
+}
+.display__title{
+  font-size: 30px;
+}
+.content{
+  width: 30%;
+  min-height: 400px;
+}
+.content__title{
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+}
+.races__btn,
+.ages__btn,
+.sex__btn,
+.ages,
+.sexes,
+.races{
+  font-size: 14px;
+}
+.display{
+  max-height: 400px;
+}
+
+/* CAMERA */
+
+.proceed__button{
+  display: none;
+}
+.take__pic{
+  width: 130px;
+}
+.picture__guidelines{
+  padding-right: 80px;
+}
 }
 
 @media (max-width: 768px){
@@ -688,6 +735,36 @@ a {
 .select__title,
 .select__subtitle{
   font-size: 14px;
+}
+
+/* DEMOGRAPHICS */
+
+.demographics__wrapper{
+  display: flex;
+  flex-direction: column;
+}
+.display,
+.content,
+.categories{
+  width: 100%;
+}
+.content__title{
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+}
+.demographics__title, 
+.demographics__subtitle{
+  padding: 10px 0;
+}
+.page__buttons--text{
+  display: none;
+}
+
+/* CAMERA */
+
+.backIconWhite{
+  height: 40px;
 }
 }
 
@@ -750,4 +827,15 @@ a {
 .cosmetic__btn{
   right: 265px;
 }
+
+/* CAMERA */
+
+.take__pic{
+  width: 100px;
+}
+.picture__guidelines--title{
+  text-align: center;
+  font-size: 14px;
+}
+
 }

@@ -46,7 +46,7 @@ export default function page() {
                     }}
                     className={`race select__btn ${categorySelected === 'race' ? 'selected' : ''}`}>
                         <p className='category__option'>{selectedRace.charAt(0).toUpperCase() + selectedRace.slice(1)}</p>
-                        <p>RACE</p>
+                        <p className='category__option--text'>RACE</p>
                     </button>
                     <button 
                     onClick={() => {
@@ -55,7 +55,7 @@ export default function page() {
                     }}
                     className={`age select__btn ${categorySelected === 'age' ? 'selected' : ''}`}>
                         <p className='category__option'>{selectedAge.charAt(0).toUpperCase() + selectedAge.slice(1)}</p>
-                        <p>AGE</p>
+                        <p className='category__option--text'>AGE</p>
                     </button>
                     <button 
                     onClick={() => {
@@ -64,7 +64,7 @@ export default function page() {
                     }}
                     className={`sex select__btn ${categorySelected === 'gender' ? 'selected' : ''}`}>
                         <p className='category__option'>{selectedGender.charAt(0).toUpperCase() + selectedGender.slice(1)}</p>
-                        <p>SEX</p>
+                        <p className='category__option--text'>SEX</p>
                     </button>
                 </div>
                 <div className="display">
