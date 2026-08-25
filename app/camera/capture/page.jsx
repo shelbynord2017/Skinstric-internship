@@ -2,9 +2,11 @@
 
 import React from 'react'
 import backIconWhite from '../../../assets/back-icon-white.png'
+import proceedButton from '../../../assets/proceed-button-white.png'
 import bullet from '../../../assets/bullet-icon.png'
 import takePic from '../../../assets/take-pic.png'
 import { useRef, useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function page() {
     const videoRef = useRef(null);
@@ -12,16 +14,29 @@ export default function page() {
     const [stream, setStream] = useState(null);
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState('');
+    const router = useRouter();
+
 
     //atomatically starts the webcam as soon as the page loads
     useEffect(() => {
+        let activeStream = null;
+        let cancelled = false;
+
         async function startCamera() {
             try {
                 const mediaStream = await navigator.mediaDevices.getUserMedia({
                     video: { facingMode: 'user' },
                     audio: false,
                 });
+
+                if (cancelled) {
+                    mediaStream.getTracks().forEach((track) => track.stop());
+                    return
+                }
+
+                activeStream = mediaStream;
                 setStream(mediaStream);
+
                 if (videoRef.current) {
                     videoRef.current.srcObject = mediaStream;
                 }
@@ -35,11 +50,25 @@ export default function page() {
 
         //clean up: stops the camera stream if the user clicks 'back' or leaves the page
         return () => {
-            if (stream) {
-                stream.getTracks().forEach((track) => track.stop());
+            cancelled = true;
+            activeStream?.getTracks().forEach((track) => track.stop());
+
+            if (videoRef.current) {
+                videoRef.current.srcObject = null;
             }
         };
     }, []);
+
+    const stopCamera = () => {
+        const currentStream = videoRef.current?.srcObject;
+
+        if (currentStream) {
+            currentStream.getTracks().forEach((track) => track.stop());
+            videoRef.current.srcObject = null;
+        }
+
+        setStream(null);
+    };
 
     const captureAndPost = async () => {
         if (!videoRef.current || !canvasRef.current) return;
@@ -65,19 +94,38 @@ export default function page() {
             body: JSON.stringify({ image: imageString }),
         });
 
+        const data = await response.json();
+
+        console.log("Phase Three response:", data);
+
         if (response.ok) {
             setStatus('GREAT SHOT');
-            // Optional: Redirect the user somewhere else after a successful upload
-            // router.push('/dashboard');
+        
+
+            sessionStorage.setItem(
+                "analysisData",
+                JSON.stringify(data.data)
+            );
+
+            if (videoRef.current?.srcObject) {
+            videoRef.current.srcObject
+                .getTracks()
+                .forEach((track) => track.stop());
+            }
+
+            stopCamera();
+
+            router.push("/select");
         } else {
             setStatus('Upload failed.');
         }
+
+        console.log(data)
         } catch (error) {
         setStatus('Network error occurred.');
         } finally {
         setLoading(false);
         }
-
     }
 
   return (
@@ -93,10 +141,11 @@ export default function page() {
                         playsInline 
                         muted
                     />
+                    {status && <p className='camera__status'>{status}</p>}
                 </div>
+                
 
                 <canvas ref={canvasRef} style={{ display: 'none' }} />
-                {status && <p>{status}</p>}
                 <button 
                 onClick={captureAndPost}
                 disabled={loading || !stream}
@@ -106,7 +155,11 @@ export default function page() {
                 </button>
             </div>
             <div className="lower__section">
-                <img src={backIconWhite.src} className="backIconWhite" alt="" />
+                <button
+                onClick={() => router.push('/result')}>
+                    <img src={backIconWhite.src} className="backIconWhite" alt="" />
+                </button>
+                
                 <div className="picture__guidelines">
                     <p className='picture__guidelines--title'>TO GET BETTER RESULTS MAKE SURE TO HAVE</p>
                     <div className="picture__bullets">
@@ -124,9 +177,16 @@ export default function page() {
                         </div>
                     </div>
                 </div>
-                <div></div>
+                <button
+                onClick={() => router.push('/select')}>
+                    <img src={proceedButton.src} className='proceed__button' alt="" />
+                </button>
+                
             </div>
         </div>
     </div>
   )
 }
+
+
+

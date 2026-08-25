@@ -17,7 +17,7 @@ export default function page() {
     <div className='container'>
         <div className="row selected__row">
             <p className='select__title'>A.I. ANALYSIS</p>
-            <p>
+            <p className='select__subtitle'>
                 A.I. HAS ESTIMATED THE FOLLOWING. <br />
                 FIX ESTIMATED INFORMATION IF NEEDED.
             </p>
@@ -42,10 +42,12 @@ export default function page() {
                 </button>
             </div>
             <div className="page__buttons">
-                <button>
+                <button
+                onClick={() => router.push('/result')}>
                     <img src={backButton.src} alt="" />
                 </button>
-                <button>
+                <button
+                onClick={() => router.push('/select/demographics')}>
                     <img src={getSummary.src} alt="" />
                 </button>
             </div>

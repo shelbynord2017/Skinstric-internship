@@ -83,7 +83,8 @@ export default function page() {
             </form>
           </div>
           <div className="page__buttons">
-            <button>
+            <button
+            onClick={() => router.push('/')}>
               <img src={backButton.src} alt="" />
             </button>
           </div>

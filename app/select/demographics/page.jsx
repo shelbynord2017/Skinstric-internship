@@ -89,7 +89,8 @@ export default function page() {
                 {category === "gender" && <SexOptions aiData={aiData} setSelectedGender={setSelectedGender} setSelectedOption={setSelectedOption}/>}
             </div>
             <div className="page__buttons">
-                <button>
+                <button
+                onClick={() => router.push('/select')}>
                     <img src={backButton.src} alt="" />
                 </button>
                 <p className='page__buttons--text'>If A.I. estimate is wrong, select the correct one.</p>

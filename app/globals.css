@@ -151,7 +151,7 @@ a {
   height: 600px;
 }
 
-/* RESULTS */
+/* RESULT */
 
 .results__wrapper{
   display: flex;
@@ -162,7 +162,7 @@ a {
 .results__rombuses{
   margin-right: 100px;
 }
-.results__rombuses__img{
+.results__rombuses--img{
   width: 500px;
   height: 500px;
 }
@@ -543,7 +543,211 @@ a {
 .take__pic{
   margin-right: 10px;
 }
-.backIconWhite{
+.backIconWhite, 
+.proceed__button{
   height: 50px;
   margin-left: 10px;
+}
+.proceed__button{
+  margin-right: 30px;
+}
+.camera__container{
+  position: relative;
+}
+.camera__status{
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* z-index: 5; */
+  color: #fff;
+  font-size: 16;
+}
+
+@media(max-width: 940px){
+
+/* HOME PAGE */
+.content__title--text{
+  font-size: 42px;
+}
+.rectangle__left, 
+.rectangle__right{
+  transform: rotate(180deg);
+  height: 400px;
+}
+.landing__left--btn{
+  display: none;
+}
+.landing__content{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+.landing__content{
+  position: relative;
+}
+.landing__lower{
+  text-align: center;
+}
+
+/* RESULT */
+
+.results__rombuses{
+  margin-right: 0px;
+}
+.results__rombuses--img{
+  width: 400px;
+  height: 400px;
+}
+.camera__img{
+  left: 115px;
+  top: 135px;
+}
+.camera__text{
+  left: 200px;
+  top: 71px;
+}
+.gallery__img{
+  right: 115px;
+  top: 135px;
+}
+.gallery__text{
+  right: 180px;
+  top: 260px;
+}
+
+/* SELECT*/
+
+.select__rombuses--img{
+  height: 550px;
+  width: 550px;
+}
+.demographics,
+.skinTypeDetails,
+.weather,
+.cosmeticConcerns{
+  height: 150px;
+}
+.dem__btn{
+  top: 105px;
+}
+.weather__btn{
+  top: 300px;
+}
+.skin__btn{
+  left: 385px;
+}
+.cosmetic__btn{
+  right: 385px;
+}
+}
+
+@media (max-width: 768px){
+  .demographics__input--text {
+        font-size: 42px;
+    }
+  .demographics__input{
+    width: 350px;
+  }
+
+  /* RESULT */
+
+  .results__wrapper{
+    display: flex;
+    flex-direction: column;
+  }
+  .results__rombuses--img{
+    height: 300px;
+    width: 300px;
+  }
+  .camera__img{
+  left: 235px;
+  top: 90px;
+}
+.camera__text{
+  left: 300px;
+  top: 25px;
+}
+.gallery__img{
+  left: 240px;
+  top: 380px;
+}
+.gallery__text{
+  right: 320px;
+  top: 500px;
+}
+
+/* SELECT */
+
+.skin__btn{
+  left: 320px;
+}
+.cosmetic__btn{
+  right: 320px;
+}
+.select__title,
+.select__subtitle{
+  font-size: 14px;
+}
+}
+
+@media(max-width: 667px){
+  .content__title--text{
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+  .landing__content--text{
+    font-size: 14px;
+    max-width: 300px;
+  }
+  .landing__upper{
+    margin-bottom: 20px;
+  }
+  .landing__right--btn{
+    right: 40%;
+    top: 65%;
+    width: 100px;
+  }
+  .landing__upper{
+    position: relative;
+  }
+ 
+}
+
+@media(max-width: 550px){
+  .landing__right--btn{
+    top: 60%;
+  }
+  .landing__content--text{
+    font-size: 12px;
+    margin-bottom: 25px;;
+  }
+
+  /* RESULT */
+
+  .camera__img{
+  left: 180px;
+  top: 90px;
+}
+.camera__text{
+  left:260px;
+  top: 25px;
+}
+.gallery__img{
+  left: 180px;
+  top: 380px;
+}
+.gallery__text{
+  right: 280px;
+  top: 495px;
+}
+
+/* SELECT */
+
+.skin__btn{
+  left: 265px;
+}
+.cosmetic__btn{
+  right: 265px;
+}
 }

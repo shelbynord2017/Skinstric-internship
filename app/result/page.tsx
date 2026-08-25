@@ -80,7 +80,7 @@ export default function page() {
             {/* <LoadingCamera/> */}
             <div className="results__wrapper">
                 <div className="results__rombuses">
-                    <img src={rombuses.src} className="results__rombuses__img" alt="" />
+                    <img src={rombuses.src} className="results__rombuses--img" alt="" />
                 </div>
                 <button 
                 onClick={openModal}
@@ -92,7 +92,7 @@ export default function page() {
                     <CameraModal closeModal={closeModal} />
                 )}
                 <div className="results__rombuses">
-                    <img src={rombuses.src} className="results__rombuses__img" alt="" />
+                    <img src={rombuses.src} className="results__rombuses--img" alt="" />
                 </div>
                 <label htmlFor='gallery-upload' className="gallery">
                     <img src={gallery.src} className="gallery__img" alt="" />
@@ -107,7 +107,9 @@ export default function page() {
                 />
             </div>
             <div className="page__buttons">
-                <button>
+                <button
+                onClick={() => router.push('/testing')}
+                >
                     <img src={backButton.src} alt="" />
                 </button>
             </div>
