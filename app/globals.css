@@ -9,7 +9,6 @@
 
 body {
   max-width: 100%;
-  /* overflow-x: hidden; */
 }
 
 a {
@@ -67,47 +66,87 @@ a {
 .landing__content{
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between;
-  align-items: center; */
   width: 100%;
 }
 .landing__upper{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   position: relative;
 }
 .landing__lower{
   position: absolute;
   bottom: 50px;
 }
-.landing__left
+.landing__left,
 .landing__right{
   display: flex;
   justify-content: center;
+  width: 100%;
   position: relative;
+}
+.landing__content--title{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 11;
+}
+.rectangle__left{
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  max-height: 600px;
+  height: 100%;
+  width: 100%;
+}
+.rectangle__right{
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.rectangle__left--img{
+  position: absolute;
+  top: 50%;
+  height: 600px;
+}
+.rectangle__right--img{
+  position: absolute;
+  top: 50%;
+}
+.landing__left--btn-wrapper,
+.landing__right--btn-wrapper{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .landing__left--btn,
 .landing__right--btn{
-  z-index: 10;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  align-items: center;
-  justify-content: center;
-  margin-left: 5%;
+  top: 280px;
 }
-.rectangle__left
-.rectangle__right{
-  position: absolute;
-  z-index: -1;
+.landing__left--btn{
+  margin-right: 20%;
+}
+.landing__right--btn{
+  margin-left: 20%;
 }
 .content__title--text{
   font-size: 90px;
   font-weight: 500;
   text-align: center;
-  justify-content: center;
   line-height: 1;
+  position: absolute;
+  top: 200px;
 }
 .landing__content--text{
   width: 400px;
@@ -117,9 +156,6 @@ a {
 
 /* TESTING */
 
-.testing__row{
-  
-}
 .testing__wrapper{
   display: flex;
   justify-content: center;
@@ -157,44 +193,57 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 5%;
+}
+.results__rombuses--right,
+.results__rombuses--left{
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
-.results__rombuses{
-  margin-right: 100px;
-}
-.results__rombuses--img{
+.results__rombuses--img-left,
+.results__rombuses--img-right{
   width: 500px;
   height: 500px;
+  display: block;
+}
+.camera, 
+.gallery{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 180px;
+  height: 250px;
 }
 .camera__img,
 .camera__text,
 .gallery__img,
 .gallery__text{
+  position: static;
+}
+.camera__img, 
+.gallery__img{
   position: absolute;
-}
-.camera__img{
-  left: 315px;
-  top: 190px;
-  transition: 500ms ease;
-}
-.camera__img:hover{
-  transform: scale(1.1);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 300ms ease;
 }
 .camera__text{
-  left: 430px;
-  top: 148px;
-}
-.gallery__img{
-  right: 410px;
-  top: 190px;
-  transition: 500ms ease;
-}
-.gallery__img:hover{
-  transform: scale(1.1);
+  position: absolute;
+  top: 10px;
+  left: 90px;
 }
 .gallery__text{
-  right: 519px;
-  top: 300px;
+  position: absolute;
+  bottom: 0px;
+  right: 125px;
+}
+.camera__img:hover, 
+.gallery__img:hover{
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 /* SELECT */
@@ -203,10 +252,20 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 .select__title{
   font-weight: bold;
+}
+.rombuses{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.select__btns{
+  position: absolute;
+  width: 500px;
+  height: 500px;
 }
 .select__rombuses--img{
   width: 700px;
@@ -222,20 +281,24 @@ a {
   transition: 300ms ease;
 }
 .dem__btn:hover{
-  transform: scale(1.05)
+  transform: scale(1.05);
 }
 .dem__btn{
-  top: 120px;
+  top: 10px; 
+  right: 142px;
 }
 .weather__btn{
-  top: 353px;
+  bottom: 10px;
+  right: 142px;
 }
 .skin__btn{
-  left: 507px;
+  left: 10px;
+  top: 140px;
 }
 .cosmetic__btn{
-  right: 507px;
-}
+  right: 10px;
+  top: 140px;
+} 
 .page__buttons{
   display: flex;
   justify-content: space-between;
@@ -410,11 +473,7 @@ a {
   justify-content: center;
 }
 
-/* CAMERA MODAL */
-
 .modal__wrapper{
-  /* height: 100px;
-  width: 250px; */
   display: flex;
   flex-direction: column;
 }
@@ -506,16 +565,13 @@ a {
 }
 .upper__section{
   min-height: 450px;
-  /* max-height: 500px; */
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin-right: 20px;
-  /* position: absolute; */
 }
 .lower__section{
   margin-top: auto;
-  /* margin-top: 800px; */
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -528,7 +584,6 @@ a {
   width: 100%;
   max-height: 600px; 
   aspect-ratio: 3/4; 
-  /* background: #000; */
   overflow: hidden;
 } 
 .video__screen{
@@ -560,21 +615,47 @@ a {
   top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* z-index: 5; */
   color: #fff;
   font-size: 16;
+}
+@media(max-width: 1100px){
+
+.results__rombuses--img-left,
+.results__rombuses--img-right{
+  width: 400px;
+  height: 400px;
+
+}
+.gallery__text{
+  right: 100px;
+  top: 182px;
+} 
 }
 
 @media(max-width: 940px){
 
 /* HOME PAGE */
+.landing__content--title{
+  bottom: 20px;
+}
 .content__title--text{
   font-size: 42px;
 }
-.rectangle__left, 
-.rectangle__right{
+.rectangle__left--img, 
+.rectangle__right--img{
   transform: rotate(180deg);
-  height: 400px;
+  height: 500px;
+  position: absolute;
+}
+.rectangle__left--img{
+  left: 100px;
+}
+.rectangle__right--img{
+  right: 100px;
+}
+.landing__right--btn{
+  margin-right: 60%;
+  top: 230px;
 }
 .landing__left--btn{
   display: none;
@@ -588,33 +669,19 @@ a {
   position: relative;
 }
 .landing__lower{
+  top: 300px;
   text-align: center;
 }
 
 /* RESULT */
 
-.results__rombuses{
-  margin-right: 0px;
-}
-.results__rombuses--img{
+.results__rombuses--img-left,
+.results__rombuses--img-right{
   width: 400px;
   height: 400px;
 }
-.camera__img{
-  left: 115px;
-  top: 135px;
-}
 .camera__text{
-  left: 200px;
-  top: 71px;
-}
-.gallery__img{
-  right: 115px;
-  top: 135px;
-}
-.gallery__text{
-  right: 180px;
-  top: 260px;
+  top: 10px;
 }
 
 /* SELECT*/
@@ -629,19 +696,26 @@ a {
 .cosmeticConcerns{
   height: 150px;
 }
-.dem__btn{
-  top: 105px;
+.select__btns{
+  width: 400px;
+  height: 400px;
 }
+.dem__btn{
+  bottom: 180px;
+  right: 128px;
+} 
 .weather__btn{
-  top: 300px;
+  top: 180px;
+  right: 128px;
 }
 .skin__btn{
-  left: 385px;
+  left: 35px;
+  top: 126px;
 }
 .cosmetic__btn{
-  right: 385px;
-}
-
+  right: 42px;
+  top: 126px;
+} 
 
 /* DEMOGRAPHICS */
 
@@ -690,6 +764,17 @@ a {
 }
 
 @media (max-width: 768px){
+  .content__title--text{
+    font-size: 28px;
+  }
+  .landing__right--btn{
+    right: 65%;
+    top: 240px;
+    width: 120px;
+  }
+  .landing__content--text{
+    font-size: 12px;
+  }
   .demographics__input--text {
         font-size: 42px;
     }
@@ -703,35 +788,25 @@ a {
     display: flex;
     flex-direction: column;
   }
-  .results__rombuses--img{
+  .results__rombuses--img-left,
+  .results__rombuses--img-right{
     height: 300px;
     width: 300px;
   }
-  .camera__img{
-  left: 235px;
-  top: 90px;
-}
-.camera__text{
-  left: 300px;
+  .camera__img, 
+  .gallery__img{
+  height: 100px;
+  }
+  .camera__text{
   top: 25px;
 }
-.gallery__img{
-  left: 240px;
-  top: 380px;
-}
-.gallery__text{
-  right: 320px;
-  top: 500px;
-}
+  .gallery__text{
+    right: 100px;
+    top: 165px; 
+  }
 
 /* SELECT */
 
-.skin__btn{
-  left: 320px;
-}
-.cosmetic__btn{
-  right: 320px;
-}
 .select__title,
 .select__subtitle{
   font-size: 14px;
@@ -769,64 +844,92 @@ a {
 }
 
 @media(max-width: 667px){
+  .rectangle__left--img, 
+  .rectangle__right--img{
+    height: 400px;
+  }
   .content__title--text{
     font-size: 28px;
-    margin-bottom: 40px;
-  }
-  .landing__content--text{
-    font-size: 14px;
-    max-width: 300px;
-  }
-  .landing__upper{
-    margin-bottom: 20px;
+    top: 150px;
   }
   .landing__right--btn{
-    right: 40%;
-    top: 65%;
+    top: 200px;
+  }
+  .landing__content--text{
+    font-size: 12px;
+    max-width: 300px;
+  }
+  .landing__lower{
+    top: 260px;
+  }
+  
+  /* SELECT */
+
+  .select__rombuses--img{
+    height: 400px;
+    width: 400px;
+  }
+  .select__btns{
+  width: 350px;
+  height: 350px;
+  }
+  .demographics,
+  .skinTypeDetails,
+  .weather,
+  .cosmeticConcerns{
+    height: 110px;
+  }
+  .dem__btn{
+  bottom: 130px;
+  right: 120px;
+  } 
+  .weather__btn{
+    top: 130px;
+    right: 120px;
+  }
+  .skin__btn{
+    left: 60px;
+    top: 120px;
+  }
+  .cosmetic__btn{
+    right: 60px;
+    top: 120px;
+  } 
+  .select__back--btn{
+    width: 60px;
+  }
+  .select__summary--btn{
     width: 100px;
   }
-  .landing__upper{
-    position: relative;
+  .select__title, 
+  .select__subtitle{
+    font-size: 13px;
   }
- 
 }
 
 @media(max-width: 550px){
+  .rectangle__left--img, 
+  .rectangle__right--img{
+    height: 300px;
+  }
+  .landing__content--title{
+    bottom: 80px;
+  }
   .landing__right--btn{
     top: 60%;
   }
   .landing__content--text{
-    font-size: 12px;
-    margin-bottom: 25px;;
+    font-size: 10px;
+    width: 170px;
   }
-
-  /* RESULT */
-
-  .camera__img{
-  left: 180px;
-  top: 90px;
-}
-.camera__text{
-  left:260px;
-  top: 25px;
-}
-.gallery__img{
-  left: 180px;
-  top: 380px;
-}
-.gallery__text{
-  right: 280px;
-  top: 495px;
-}
-
-/* SELECT */
-
-.skin__btn{
-  left: 265px;
-}
-.cosmetic__btn{
-  right: 265px;
-}
+  .landing__lower{
+    top: 140px;
+  }
+  .landing__right--btn{
+    width: 100px;
+    top: 220px;
+    right: 60%;
+  }
 
 /* CAMERA */
 

@@ -17,25 +17,25 @@ export default function Landing() {
                 <div className="landing__content">
                     <div className="landing__upper">
                         <div className="landing__left">
-                            <div>
-                                <img src={leftRectangle.src} className="rectangle__left" alt="" />
-                            </div>
-                            <div className="landing__left--btn">
-                                <img src={leftButton.src} alt="" />
+                            <div className="rectangle__left">
+                                <img src={leftRectangle.src} className="rectangle__left--img" alt="" />
+                                <div className="landing__left--btn-wrapper">
+                                    <img src={leftButton.src} className="landing__left--btn" alt="" />
+                                </div>
                             </div>
                         </div>
                         <div className="landing__content--title">
                             <h1 className='content__title--text'>Sophisticated<br />skincare</h1>
                         </div>
                         <div className="landing__right">
-                            <div>
-                                <img src={rightRectangle.src} className="rectangle__right" alt="" />
+                            <div className="rectangle__right">
+                                <img src={rightRectangle.src} className="rectangle__right--img" alt="" />
+                                <button 
+                                onClick={() => router.push('/testing')}
+                                className="landing__right--btn-wrapper">
+                                    <img src={rightButton.src} className="landing__right--btn" alt="" />
+                                </button>
                             </div>
-                            <button 
-                            onClick={() => router.push('/testing')}
-                            className="landing__right--btn">
-                                <img src={rightButton.src} alt="" />
-                            </button>
                         </div>
                     </div>
                     <div className="landing__lower">

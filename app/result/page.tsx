@@ -79,32 +79,34 @@ export default function page() {
             {/* <LoadingAnalysis/> */}
             {/* <LoadingCamera/> */}
             <div className="results__wrapper">
-                <div className="results__rombuses">
-                    <img src={rombuses.src} className="results__rombuses--img" alt="" />
+                <div className="results__rombuses--left">
+                    <img src={rombuses.src} className="results__rombuses--img-left" alt="" />
+                
+                    <button 
+                    onClick={openModal}
+                    className="camera">
+                        <img src={camera.src} className="camera__img" alt="" />
+                        <img src={cameraText.src} className="camera__text" alt="" />
+                    </button>
                 </div>
-                <button 
-                onClick={openModal}
-                className="camera">
-                    <img src={camera.src} className="camera__img" alt="" />
-                    <img src={cameraText.src} className="camera__text" alt="" />
-                </button>
                 {isOpen && (
                     <CameraModal closeModal={closeModal} />
                 )}
-                <div className="results__rombuses">
-                    <img src={rombuses.src} className="results__rombuses--img" alt="" />
+                <div className="results__rombuses--right">
+                    <img src={rombuses.src} className="results__rombuses--img-right" alt="" />
+                
+                    <label htmlFor='gallery-upload' className="gallery">
+                        <img src={gallery.src} className="gallery__img" alt="" />
+                        <img src={galleryText.src} className="gallery__text" alt="" />
+                    </label>
+                    <input
+                        id="gallery-upload"
+                        type="file"
+                        accept="image/*"
+                        onChange={handleImageUpload}
+                        hidden
+                    />
                 </div>
-                <label htmlFor='gallery-upload' className="gallery">
-                    <img src={gallery.src} className="gallery__img" alt="" />
-                    <img src={galleryText.src} className="gallery__text" alt="" />
-                </label>
-                <input
-                    id="gallery-upload"
-                    type="file"
-                    accept="image/*"
-                    onChange={handleImageUpload}
-                    hidden
-                />
             </div>
             <div className="page__buttons">
                 <button
