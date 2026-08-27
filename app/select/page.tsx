@@ -8,6 +8,7 @@ import skinTypeDetails from '../../assets/skin-type-details.png'
 import backButton from '../../assets/back-btn.png'
 import getSummary from '../../assets/get-summary-btn.png'
 import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 
 
 export default function page() {
@@ -15,6 +16,7 @@ export default function page() {
 
   return (
     <div className='container'>
+
         <div className="row selected__row">
             <p className='select__title'>A.I. ANALYSIS</p>
             <p className='select__subtitle'>

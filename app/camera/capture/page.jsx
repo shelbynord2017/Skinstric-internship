@@ -7,6 +7,7 @@ import bullet from '../../../assets/bullet-icon.png'
 import takePic from '../../../assets/take-pic.png'
 import { useRef, useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import LoadingCamera from '../../components/LoadingCamera'
 
 export default function page() {
     const videoRef = useRef(null);
@@ -15,7 +16,7 @@ export default function page() {
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState('');
     const router = useRouter();
-
+    const [cameraLoading, setCameraLoading] = useState(true);
 
     //atomatically starts the webcam as soon as the page loads
     useEffect(() => {
@@ -23,6 +24,8 @@ export default function page() {
         let cancelled = false;
 
         async function startCamera() {
+            setCameraLoading(true);
+
             try {
                 const mediaStream = await navigator.mediaDevices.getUserMedia({
                     video: { facingMode: 'user' },
@@ -43,6 +46,8 @@ export default function page() {
             } catch (err) {
                 console.error('Error accessing webcam:', err);
                 setStatus('Could not access camera. Please grant permissions.')
+            } finally {
+                setCameraLoading(false);
             }
         }
 
@@ -130,8 +135,9 @@ export default function page() {
 
   return (
     <div className="container">
-        <div className="selfie__row">
-
+        {cameraLoading && <LoadingCamera />}
+    
+            <div className="selfie__row">
             <div className="upper__section">
                 <div className="camera__container">
                     <video 
@@ -181,7 +187,6 @@ export default function page() {
                 onClick={() => router.push('/select')}>
                     <img src={proceedButton.src} className='proceed__button' alt="" />
                 </button>
-                
             </div>
         </div>
     </div>

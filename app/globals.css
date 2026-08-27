@@ -77,7 +77,6 @@ a {
 }
 .landing__lower{
   position: absolute;
-  bottom: 50px;
 }
 .landing__left,
 .landing__right{
@@ -89,6 +88,9 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.landing__middle--btn-wrapper{
+  display: none;
 }
 .rectangle__left{
   position: absolute;
@@ -144,8 +146,8 @@ a {
 }
 .landing__content--text{
   width: 400px;
-  font-size: 16px;
-  margin-left: 10px;
+  font-size: 20px;
+  margin-left: 15px;
 }
 
 /* TESTING */
@@ -631,6 +633,7 @@ a {
 .landing__content{
   display: flex;
   flex-direction: column;
+  align-items: center;
   min-height: calc(100vh - 30px);
 }
 .landing__lower{
@@ -638,29 +641,27 @@ a {
 }
 .landing__content--title{
   bottom: 20px;
+  flex-direction: column;
+  gap: 1em;
 }
 .content__title--text{
-  font-size: 42px;
+  font-size: 48px;
 }
 .rectangle__left--img, 
 .rectangle__right--img{
   transform: rotate(180deg);
   height: 500px;
 }
-
+.landing__middle--btn-wrapper{
+  display: block;
+}
+.landing__right--btn-wrapper{
+  display: none;
+}
 .landing__left--btn{
   display: none;
 }
-.landing__content{
-  display: flex;
-  justify-content: center;
-  align-items: center; 
-}
-.landing__content{
-  /* position: relative; */
-}
 .landing__lower{
-  /* top: 300px; */
   text-align: center;
 }
 
@@ -837,7 +838,6 @@ a {
   height: 40px;
 }
 
-
 @media(max-width: 667px){
   .content__title--text{
     font-size: 36px;
@@ -901,25 +901,15 @@ a {
   .rectangle__right--img{
     height: 300px;
   }
-  .landing__content--title{
-    bottom: 80px;
-  }
-  .landing__right--btn{
+  .landing__middle--btn{
     width: 100px;
   }
   .landing__content--text{
     font-size: 10px;
-    width: 170px;
+    width: 160px;
   }
   .landing__lower{
     bottom: 170px;
-  }
-  .landing__right--btn{
-    width: 100px;
-  }
-  .landing__right--btn-wrapper{
-    display: flex;
-    justify-content: center;
   }
 
 /* CAMERA */
@@ -933,11 +923,6 @@ a {
 }
 }
 
-@media(max-width: 500px){
-  .landing__right--btn{
-    width: 75px;
-  }
-}
 @media(max-width: 450px){
 
   /* SELECT */

@@ -10,13 +10,12 @@ import backButton from '../../assets/back-btn.png'
 import { useRouter } from 'next/navigation';
 import CameraModal from '../components/CameraModal'
 import LoadingAnalysis from '../components/LoadingAnalysis'
-import LoadingCamera from '../components/LoadingCamera'
 
 export default function page() {
     const [image, setImage] = useState<File | null>(null);
     const router = useRouter();
-    const [loadingCamera, setLoadingCamera] = useState(true)
     const [isOpen, setIsOpen] = useState(false);
+    const [analysisLoading, setAnalysisLoading] = useState(false);
 
     const openModal = () => setIsOpen(true);
     const closeModal = () => setIsOpen(false);
@@ -30,6 +29,7 @@ export default function page() {
         reader.onloadend = async () => {
             if (typeof reader.result !== "string") return;
 
+            setAnalysisLoading(true)
             const base64Image = reader.result.split(",")[1];
 
             try {
@@ -66,18 +66,24 @@ export default function page() {
             console.log(data);
             } catch (error) {
             console.error(error);
+            } finally {
+                setAnalysisLoading(false);
             }
         };
 
         reader.readAsDataURL(file);
+    
+        if (analysisLoading){
+        return <LoadingAnalysis/>;
+    }
     };
+
+    
 
   return (
     <div className='container'>
         <div className="row results__row">
             <p>TO START ANALYSIS</p>
-            {/* <LoadingAnalysis/> */}
-            {/* <LoadingCamera/> */}
             <div className="results__wrapper">
                 <div className="results__rombuses--left">
                     <img src={rombuses.src} className="results__rombuses--img-left" alt="" />

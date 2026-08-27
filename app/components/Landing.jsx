@@ -26,6 +26,11 @@ export default function Landing() {
                         </div>
                         <div className="landing__content--title">
                             <h1 className='content__title--text'>Sophisticated<br />skincare</h1>
+                            <button 
+                                onClick={() => router.push('/testing')}
+                                className="landing__middle--btn-wrapper">
+                                    <img src={rightButton.src} className="landing__middle--btn" alt="" />
+                            </button>
                         </div>
                         <div className="landing__right">
                             <div className="rectangle__right">
