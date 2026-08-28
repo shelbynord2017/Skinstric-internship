@@ -66,19 +66,17 @@ export default function page() {
             console.log(data);
             } catch (error) {
             console.error(error);
-            } finally {
-                setAnalysisLoading(false);
-            }
+            setAnalysisLoading(false);
+            } 
         };
 
         reader.readAsDataURL(file);
     
-        if (analysisLoading){
-        return <LoadingAnalysis/>;
-    }
     };
 
-    
+    if (analysisLoading){
+        return <LoadingAnalysis/>;
+    }
 
   return (
     <div className='container'>

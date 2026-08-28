@@ -9,12 +9,17 @@ export default function LoadingAnalysis() {
         <div className='loading__wrapper'>
             <div className="loading__upper">
                 <div className="rombuses">
-                    <img src={rombuses.src} className="rombuses__img" alt="" />
+                    <img src={rombuses.src} className="loading__rombuses--img" alt="" />
                 </div>
                 <div className='loading__camera--text'>
                     <img src={camera.src} className="loading__camera--img" alt="" />
                     <h2 className='loading__camera'>
-                        SETTING UP CAMERA...
+                        SETTING UP CAMERA
+                        <div class="loader">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
                     </h2>
                 </div>
             </div>

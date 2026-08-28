@@ -77,6 +77,7 @@ a {
 }
 .landing__lower{
   position: absolute;
+  bottom: 120;
 }
 .landing__left,
 .landing__right{
@@ -145,8 +146,8 @@ a {
   line-height: 1;
 }
 .landing__content--text{
-  width: 400px;
-  font-size: 20px;
+  width: 350px;
+  font-size: 14px;
   margin-left: 15px;
 }
 
@@ -515,8 +516,41 @@ a {
   align-items: center;
   position: relative;
 }
+.loading__rombuses--img{
+  height: 600px;
+}
 .loading__analysis--text{
   position: absolute;
+  display: flex;
+  gap: .5em;
+}
+.loader{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+.loader div{
+  width: 4px;
+  height: 4px;
+  background-color: #242424;
+  border-radius: 50%;
+  animation: bounce 1.2s ease-in-out infinite;
+}
+.loader div:nth-child(2){
+  animation-delay: 0.2s;
+}
+.loader div:nth-child(3){
+  animation-delay: 0.4s;
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
 }
 .loading__camera--text{
   position: absolute;
@@ -524,6 +558,10 @@ a {
   flex-direction: column; 
   justify-content: center;
   align-items: center;  
+}
+.loading__camera{
+  display: flex;
+  gap: .5em;
 }
 .picture__guidelines{
   display: flex;
@@ -666,7 +704,6 @@ a {
 }
 
 /* RESULT */
-
 .results__rombuses--img-left,
 .results__rombuses--img-right{
   width: 400px;
@@ -677,7 +714,6 @@ a {
 }
 
 /* SELECT*/
-
 .select__rombuses--img{
   height: 550px;
   width: 550px;
@@ -710,7 +746,6 @@ a {
 } 
 
 /* DEMOGRAPHICS */
-
 .demographics__title{
   font-size: 42px;
 }
@@ -743,7 +778,6 @@ a {
 }
 
 /* CAMERA */
-
 .proceed__button{
   display: none;
 }
@@ -759,7 +793,7 @@ a {
   .rectangle__left--img, 
   .rectangle__right--img{
     height: 400px;
-  }
+  
   }
   .content__title--text{
     font-size: 42px;
@@ -779,9 +813,7 @@ a {
   }
 
   /* RESULT */
-
   .results__wrapper{
-    display: flex;
     flex-direction: column;
   }
   .results__rombuses--img-left,
@@ -799,17 +831,15 @@ a {
   .gallery__text{
     right: 100px;
     top: 165px; 
-  }
+  } 
 
 /* SELECT */
-
 .select__title,
 .select__subtitle{
   font-size: 14px;
 }
 
 /* DEMOGRAPHICS */
-
 .demographics__wrapper{
   display: flex;
   flex-direction: column;
@@ -833,9 +863,9 @@ a {
 }
 
 /* CAMERA */
-
 .backIconWhite{
   height: 40px;
+}
 }
 
 @media(max-width: 667px){
@@ -893,6 +923,15 @@ a {
   .select__title, 
   .select__subtitle{
     font-size: 13px;
+  }
+
+  /* ANALYSIS LOADING */
+
+  .loading__rombuses--img{
+    height: 400px;
+  }
+  .loading__camera{
+    font-size: 14px;
   }
 }
 
