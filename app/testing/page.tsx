@@ -52,11 +52,15 @@ export default function page() {
         <div className="row testing__row">
           <p>TO START ANALYSIS</p>
           <div className="testing__wrapper">
-              
-
-            <div className="rombuses">
-              <img src={rombuses.src} className="rombuses__img" alt="" />
+      
+            <div className="large__diamonds--nested">
+              <div className="large__diamonds large__diamond--outer">
+                <div className="large__diamonds large__diamond--middle">
+                  <div className="large__diamonds large__diamond--inner"></div>
+                </div>
+              </div>
             </div>
+            
             <form 
             onSubmit={handleSubmit}
             className='demographics__input'>

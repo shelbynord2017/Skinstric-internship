@@ -8,7 +8,6 @@ import skinTypeDetails from '../../assets/skin-type-details.png'
 import backButton from '../../assets/back-btn.png'
 import getSummary from '../../assets/get-summary-btn.png'
 import { useRouter } from 'next/navigation'
-import { useState } from 'react'
 
 
 export default function page() {
@@ -16,7 +15,6 @@ export default function page() {
 
   return (
     <div className='container'>
-
         <div className="row selected__row">
             <p className='select__title'>A.I. ANALYSIS</p>
             <p className='select__subtitle'>
@@ -25,7 +23,11 @@ export default function page() {
             </p>
             <div className="select__wrapper">
                 <div className="rombuses">
-                    <img src={rombuses.src} className="select__rombuses--img" alt="" />
+                    {/* <img src={rombuses.src} className="select__rombuses--img" alt="" /> */}
+                    <div className="rombus rombus__small"></div>
+                    <div className="rombus rombus__medium"></div>
+                    <div className="rombus rombus__large"></div>
+                    
                     <div className="select__btns">
                         <button 
                         className='dem__btn'

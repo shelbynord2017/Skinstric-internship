@@ -83,9 +83,13 @@ export default function page() {
         <div className="row results__row">
             <p>TO START ANALYSIS</p>
             <div className="results__wrapper">
-                <div className="results__rombuses--left">
-                    <img src={rombuses.src} className="results__rombuses--img-left" alt="" />
+                <div className="small__diamonds--nested">
                 
+                    <div className="small__diamonds small__diamond--outer">
+                        <div className="small__diamonds small__diamond--middle">
+                            <div className="small__diamonds small__diamond--inner"></div>
+                        </div>
+                    </div>
                     <button 
                     onClick={openModal}
                     className="camera">
@@ -96,9 +100,14 @@ export default function page() {
                 {isOpen && (
                     <CameraModal closeModal={closeModal} />
                 )}
-                <div className="results__rombuses--right">
-                    <img src={rombuses.src} className="results__rombuses--img-right" alt="" />
+                <div className="small__diamonds--nested">
+                    {/* <img src={rombuses.src} className="results__rombuses--img-right" alt="" /> */}
                 
+                    <div className="small__diamonds small__diamond--outer">
+                        <div className="small__diamonds small__diamond--middle">
+                            <div className="small__diamonds small__diamond--inner"></div>
+                        </div>
+                    </div>
                     <label htmlFor='gallery-upload' className="gallery">
                         <img src={gallery.src} className="gallery__img" alt="" />
                         <img src={galleryText.src} className="gallery__text" alt="" />

@@ -8,13 +8,18 @@ export default function LoadingAnalysis() {
     <div className="loading__row">
         <div className='loading__wrapper'>
             <div className="loading__upper">
-                <div className="rombuses">
-                    <img src={rombuses.src} className="loading__rombuses--img" alt="" />
+                <div className="small__diamonds--nested">
+                    {/* <img src={rombuses.src} className="loading__rombuses--img" alt="" /> */}
+                    <div className="small__diamonds small__diamond--outer">
+                        <div className="small__diamonds small__diamond--middle">
+                            <div className="small__diamonds small__diamond--inner"></div>
+                        </div>
+                    </div>
                 </div>
                 <div className='loading__camera--text'>
                     <img src={camera.src} className="loading__camera--img" alt="" />
                     <h2 className='loading__camera'>
-                        SETTING UP CAMERA
+                        SETTING UP CAMERA...
                         <div class="loader">
                             <div></div>
                             <div></div>
