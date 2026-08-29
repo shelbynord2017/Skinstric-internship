@@ -331,7 +331,7 @@ a {
   height: 475px;
   border-color: rgb(206, 204, 204);
 }
-.rombuses:has(.dem__btn:hover) .rombus__small{
+.rombuses:has(.demographics__button:hover) .rombus__small{
   opacity: 1;
   transform: translate(-50%, -50%) rotate(45deg) scale(1);
 }
@@ -413,34 +413,55 @@ a {
 .select__rombuses--img{
   width: 700px;
 }
-.dem__btn, 
+.demographics__button,
 .cosmetic__btn,
 .weather__btn,
 .skin__btn{
   position: absolute;
 }
-.dem__btn{
+.select__btn{
+  width: 154px;
+  height: 154px;
+  border: none;
+  transform: rotate(45deg);
   cursor: pointer;
-  transition: 300ms ease;
+  display: inline-block;
+  transition: all 300ms ease;
 }
-.dem__btn:hover{
-  transform: scale(1.05);
+.select__btn:hover{
+  background-color: #8b8ca1;
 }
-.dem__btn{
-  top: 26px; 
-  right: 142px;
+.demographics__button{
+  background-color: #e3e0e7;
+  top: 65px; 
+  right: 174px;
+}
+.cosmetic__btn,
+.weather__btn,
+.skin__btn{
+  background-color: #f3f1f6;
+  cursor: not-allowed;
+}
+.select__btn--text{
+  transform: rotate(-45deg);
+  font-size: 14px;
+  font-weight: bold;
+  color: #242424;
+}
+.demographics__button:hover{
+  transform: rotate(45deg) scale(1.05);
 }
 .weather__btn{
-  bottom: 27px;
-  right: 142px;
+  bottom: 52px;
+  right: 174px;
 }
 .skin__btn{
-  left: 27px;
-  top: 140px;
+  left: 58px;
+  top: 180px;
 }
 .cosmetic__btn{
-  right: 27px;
-  top: 140px;
+  right: 58px;
+  top: 180px;
 } 
 .page__buttons{
   display: flex;

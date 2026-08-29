@@ -29,19 +29,18 @@ export default function page() {
 
                     <div className="select__btns">
                         <button 
-                        className='dem__btn'
+                        className="select__btn demographics__button"
                         onClick={() => router.push("/select/demographics")}>
-                            <img 
-                            src={demographics.src} className="demographics" alt="" />
+                            <div className="select__btn--text">DEMOGRAPHICS</div>
                         </button>
-                        <button className='cosmetic__btn'>
-                            <img src={cosmeticConcerns.src} className='cosmeticConcerns' alt="" />
+                        <button className='select__btn cosmetic__btn'>
+                            <div className="select__btn--text">COSMETIC CONCERNS</div>
                         </button>
-                        <button className='weather__btn'>
-                            <img src={weather.src} className='weather' alt="" />
+                        <button className='select__btn weather__btn'>
+                            <div className="select__btn--text">WEATHER</div>
                         </button>
-                        <button className='skin__btn'>
-                            <img src={skinTypeDetails.src} className='skinTypeDetails' alt="" />
+                        <button className='select__btn skin__btn'>
+                            <div className="select__btn--text">SKIN TYPE DETAILS</div>
                         </button>
                     </div>
                 </div>
