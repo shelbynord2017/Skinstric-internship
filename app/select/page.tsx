@@ -23,11 +23,10 @@ export default function page() {
             </p>
             <div className="select__wrapper">
                 <div className="rombuses">
-                    {/* <img src={rombuses.src} className="select__rombuses--img" alt="" /> */}
                     <div className="rombus rombus__small"></div>
                     <div className="rombus rombus__medium"></div>
                     <div className="rombus rombus__large"></div>
-                    
+
                     <div className="select__btns">
                         <button 
                         className='dem__btn'
