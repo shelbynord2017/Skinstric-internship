@@ -344,18 +344,6 @@ a {
   opacity: 1;
   transform: translate(-50%, -50%) rotate(45deg) scale(1);
 }
-/* @keyframes pulseSmall {
-  0%, 100% { transform: translate(-50%, -50%) rotate(45deg) scale(0.8); }
-  50% { transform: translate(-50%, -50%) rotate(50deg) scale(1); }
-}
-@keyframes pulseMedium {
-  0%, 100% { transform: translate(-50%, -50%) rotate(45deg) scale(0.9); }
-  50% { transform: translate(-50%, -50%) rotate(50deg) scale(1.05); }
-}
-@keyframes pulseLarge {
-  0%, 100% { transform: translate(-50%, -50%) rotate(45deg) scale(0.95); }
-  50% { transform: translate(-50%, -50%) rotate(50deg) scale(1.1); }
-} */
 .large__diamonds--nested,
 .small__diamonds--nested{
   position: relative;
@@ -837,16 +825,10 @@ a {
 .landing__content--title{
   bottom: 20px;
   flex-direction: column;
-  /* gap: 1em; */
 }
 .content__title--text{
   font-size: 48px;
 }
-/* .rectangle__left--img, 
-.rectangle__right--img{
-  transform: rotate(180deg);
-  height: 500px;
-} */
 .landing__left, 
 .landing__right{
   display: none;
@@ -913,6 +895,18 @@ a {
 }
 
 /* SELECT*/
+.rombus__small{
+  width: 300px;
+  height: 300px;
+}
+.rombus__medium{
+  width: 325px;
+  height: 325px;
+}
+.rombus__large{
+  width: 350px;
+  height: 350px;
+}
 .select__rombuses--img{
   height: 550px;
   width: 550px;
@@ -928,20 +922,20 @@ a {
   height: 400px;
 }
 .dem__btn{
-  bottom: 180px;
+  bottom: 183px;
   right: 128px;
 } 
 .weather__btn{
-  top: 180px;
+  top: 184px;
   right: 128px;
 }
 .skin__btn{
-  left: 35px;
-  top: 126px;
+  left: 43px;
+  top: 125px;
 }
 .cosmetic__btn{
-  right: 42px;
-  top: 126px;
+  right: 48px;
+  top: 125px;
 } 
 
 /* DEMOGRAPHICS */
@@ -974,6 +968,15 @@ a {
 }
 .display{
   max-height: 400px;
+}
+.demographics__page--buttons{
+  position: sticky;
+  bottom: 20;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 10;
+  background-color: #ffffff;
 }
 
 /* CAMERA */
@@ -1088,6 +1091,18 @@ a {
   
   /* SELECT */
 
+  .rombus__small{
+    width: 250px;
+    height: 250px;
+  }
+  .rombus__medium{
+    width: 225px;
+    height: 225px;
+  }
+  .rombus__large{
+    width: 200px;
+    height:200px;
+  }
   .select__rombuses--img{
     height: 400px;
     width: 400px;
@@ -1103,19 +1118,19 @@ a {
     height: 110px;
   }
   .dem__btn{
-  bottom: 130px;
+  bottom: 142px;
   right: 120px;
   } 
   .weather__btn{
-    top: 130px;
+    top: 142px;
     right: 120px;
   }
   .skin__btn{
-    left: 60px;
+    left: 61px;
     top: 120px;
   }
   .cosmetic__btn{
-    right: 60px;
+    right: 61px;
     top: 120px;
   } 
   .select__back--btn{

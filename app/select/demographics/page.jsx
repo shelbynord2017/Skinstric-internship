@@ -88,7 +88,7 @@ export default function page() {
                 {category === "age" && <AgeOptions aiData={aiData} setSelectedAge={setSelectedAge} setSelectedOption={setSelectedOption}/>}
                 {category === "gender" && <SexOptions aiData={aiData} setSelectedGender={setSelectedGender} setSelectedOption={setSelectedOption}/>}
             </div>
-            <div className="page__buttons">
+            <div className="page__buttons demographics__page--buttons">
                 <button
                 onClick={() => router.push('/select')}>
                     <img src={backButton.src} alt="" />
