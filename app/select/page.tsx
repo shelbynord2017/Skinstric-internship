@@ -1,10 +1,5 @@
 'use client'
 
-import rombuses from '../../assets/rombuses.png'
-import demographics from '../../assets/demographics.png'
-import cosmeticConcerns from '../../assets/cosmetic-concerns.png'
-import weather from '../../assets/weather.png'
-import skinTypeDetails from '../../assets/skin-type-details.png'
 import backButton from '../../assets/back-btn.png'
 import getSummary from '../../assets/get-summary-btn.png'
 import { useRouter } from 'next/navigation'
@@ -29,17 +24,17 @@ export default function page() {
 
                     <div className="select__btns">
                         <button 
-                        className="select__btn demographics__button"
+                        className="select__page--btn demographics__button"
                         onClick={() => router.push("/select/demographics")}>
                             <div className="select__btn--text">DEMOGRAPHICS</div>
                         </button>
-                        <button className='select__btn cosmetic__btn'>
+                        <button className='select__page--btn cosmetic__btn'>
                             <div className="select__btn--text">COSMETIC CONCERNS</div>
                         </button>
-                        <button className='select__btn weather__btn'>
+                        <button className='select__page--btn weather__btn'>
                             <div className="select__btn--text">WEATHER</div>
                         </button>
-                        <button className='select__btn skin__btn'>
+                        <button className='select__page--btn skin__btn'>
                             <div className="select__btn--text">SKIN TYPE DETAILS</div>
                         </button>
                     </div>

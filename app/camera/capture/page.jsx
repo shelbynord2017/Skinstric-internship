@@ -106,7 +106,6 @@ export default function page() {
         if (response.ok) {
             setStatus('GREAT SHOT');
         
-
             sessionStorage.setItem(
                 "analysisData",
                 JSON.stringify(data.data)

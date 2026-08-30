@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState } from 'react'
-import rombuses from '../../assets/rombuses.png'
 import camera from '../../assets/camera.png'
 import cameraText from '../../assets/camera-text.png'
 import gallery from '../../assets/gallery.png'
@@ -100,9 +99,8 @@ export default function page() {
                 {isOpen && (
                     <CameraModal closeModal={closeModal} />
                 )}
+
                 <div className="small__diamonds--nested">
-                    {/* <img src={rombuses.src} className="results__rombuses--img-right" alt="" /> */}
-                
                     <div className="small__diamonds small__diamond--outer">
                         <div className="small__diamonds small__diamond--middle">
                             <div className="small__diamonds small__diamond--inner"></div>

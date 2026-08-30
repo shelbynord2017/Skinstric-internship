@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import rombuses from '../../assets/rombuses.png'
 import backButton from '../../assets/back-btn.png'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
@@ -60,7 +59,7 @@ export default function page() {
                 </div>
               </div>
             </div>
-            
+
             <form 
             onSubmit={handleSubmit}
             className='demographics__input'>
