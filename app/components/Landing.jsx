@@ -61,9 +61,9 @@ export default function Landing() {
                             HIGHLY-PERSONALIZED ROUTINE TAILORED TO WHAT YOUR SKIN NEEDS.
                         </div>
                         <button 
-                                onClick={() => router.push('/testing')}
-                                className="landing__middle--btn-wrapper">
-                                    <img src={rightButton.src} className="landing__middle--btn" alt="" />
+                        onClick={() => router.push('/testing')}
+                        className="landing__middle--btn-wrapper">
+                            <img src={rightButton.src} className="landing__middle--btn" alt="" />
                         </button>
                     </div>
                 </div>

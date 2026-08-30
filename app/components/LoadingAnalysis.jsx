@@ -1,5 +1,4 @@
 import React from 'react'
-import rombuses from '../../assets/rombuses.png'
 
 export default function LoadingAnalysis() {
   return (
@@ -14,7 +13,7 @@ export default function LoadingAnalysis() {
               PREPARING YOUR ANALYSIS...
           
           
-          <div class="loader">
+          <div className="loader">
             <div></div>
             <div></div>
             <div></div>

@@ -70,7 +70,6 @@ export default function page() {
         };
 
         reader.readAsDataURL(file);
-    
     };
 
     if (analysisLoading){

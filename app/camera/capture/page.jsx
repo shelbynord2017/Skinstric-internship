@@ -43,6 +43,7 @@ export default function page() {
                 if (videoRef.current) {
                     videoRef.current.srcObject = mediaStream;
                 }
+
             } catch (err) {
                 console.error('Error accessing webcam:', err);
                 setStatus('Could not access camera. Please grant permissions.')
